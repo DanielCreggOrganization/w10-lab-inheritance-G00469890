@@ -25,8 +25,7 @@ An **"Is-A"** relationship is established between the subclass and superclass. F
 ### Example
 ```java
 public class Person {
-    protected String name;
-    protected int age;
+    private String name;
 
     public void speak() {
         System.out.println("Hello, my name is " + name);
@@ -34,7 +33,7 @@ public class Person {
 }
 
 public class Employee extends Person {
-    public int employeeId;
+    private int employeeId;
 
     public void work() {
         System.out.println(name + " is working.");
