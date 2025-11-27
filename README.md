@@ -87,7 +87,23 @@ classDiagram
 **In the `Main` class:**
 -   Create an instance of `Dog`.
 -   Call the setSpecies() and setName() methods. Then print the results to the terminal using the getSpecies() and setSpecies() methods. 
+ -   Call the setSpecies() and setName() methods. Then print the results to the terminal using the getSpecies() and setSpecies() methods. 
 
+### Suggested Solution (UML)
+```mermaid
+classDiagram
+    Animal <|-- Dog
+    class Animal {
+        - String species
+        + getSpecies() String
+        + setSpecies(species: String) void
+    }
+    class Dog {
+        - String name
+        + getName() String
+        + setName(name: String) void
+    }
+```
 ## 2. Terminology
 
 ### Learning Objective
@@ -106,7 +122,19 @@ Inheritance establishes a hierarchy between classes, where the subclass extends 
 **In your `Main` class:**
 -   Create an instance of `Car`.
 -   Call `move()` and `playRadio()`.
+ -   Call `move()` and `playRadio()`.
 
+### Suggested Solution (UML)
+```mermaid
+classDiagram
+    Vehicle <|-- Car
+    class Vehicle {
+        + move()
+    }
+    class Car {
+        + playRadio()
+    }
+```
 ## 3. Types of Inheritance
 
 ### Learning Objective
@@ -293,6 +321,38 @@ In `Main` show that `Motorbike` and `Car` are both `Vehicle` instances by:
 
 This addition demonstrates hierarchical inheritance: multiple subclasses (`Car`, `Motorbike`, etc.) can extend the same superclass (`Vehicle`).
 
+### Suggested Solution (UML)
+```mermaid
+classDiagram
+    Vehicle <|-- Car
+    Car <|-- ElectricCar
+    Vehicle <|-- Motorbike
+    class Vehicle {
+        - String type
+        + getType() String
+        + setType(type: String) void
+        + move()
+    }
+    class Car {
+        - int doors
+        + getDoors() int
+        + setDoors(doors: int) void
+        + honk()
+    }
+    class ElectricCar {
+        - int batteryCapacity
+        + getBatteryCapacity() int
+        + setBatteryCapacity(capacity: int) void
+        + charge()
+    }
+    class Motorbike {
+        - boolean hasSidecar
+        + hasSidecar() boolean
+        + setHasSidecar(hasSidecar: boolean) void
+        + ride()
+    }
+```
+
 
 ## 4. The Object Class
 
@@ -321,6 +381,15 @@ Create a class `Gadget`:
 -   Create an instance of `Gadget`.
 -   Call the `toString()` method on the object.
 -   Call another method from the dot operator list. 
+
+### Suggested Solution (UML)
+```mermaid
+classDiagram
+    Object <|-- Gadget
+    class Gadget {
+        + toString() String
+    }
+```
 
 ## 5. Constructors in Inheritance
 
@@ -387,6 +456,25 @@ sequenceDiagram
 **In your `Main` class:**
 -   Create instances of both `Person` and `Student`.
 -   Print the details of both using the getter methods.
+
+### Suggested Solution (UML)
+```mermaid
+classDiagram
+    Person <|-- Student
+    class Person {
+        - String name
+        - int age
+        + getName() String
+        + setName(name: String) void
+        + getAge() int
+        + setAge(age: int) void
+    }
+    class Student {
+        - String studentId
+        + getStudentId() String
+        + setStudentId(id: String) void
+    }
+```
 
 ## Summary
 -   Definition and Basics of Inheritance
